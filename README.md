@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# KubeMind AI Platform
 
-## Getting Started
+KubeMind AI is an enterprise-grade operational intelligence platform designed for deep observability, predictive analytics, and automated root cause analysis (RCA) in modern infrastructure. It leverages artificial intelligence to provide real-time insights, interactive topology graphing, and an NLP-powered copilot for advanced infrastructure management.
 
-First, run the development server:
+## 🌟 Key Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Interactive Service Graph:** High-fidelity, real-time visualization of service dependencies, network topologies, and live telemetry using React Flow.
+- **Advanced RCA Reasoning:** Automated root cause analysis to quickly identify, trace, and troubleshoot anomalies across your clusters.
+- **Predictive Forecasting:** Data-driven resource forecasting to preemptively address capacity limits, performance degradations, and bottlenecks.
+- **NLP Infrastructure Copilot:** A conversational AI assistant for querying infrastructure state, retrieving logs, and generating insights naturally.
+- **Dynamic Timeline & Live Logs:** Comprehensive chronological tracking of events, deployments, and streaming container logs.
+- **Actionable Insights:** Intelligent alerts and performance health summaries powered by continuous telemetry analysis.
+
+## 🛠️ Technology Stack
+
+- **Framework:** Next.js 16 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS v4, Framer Motion for micro-animations
+- **State Management:** Zustand
+- **Visualizations:** Recharts for data plotting, `@xyflow/react` for topology graphs
+- **Icons:** Lucide React
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Ensure you have Node.js (v18 or higher) and npm (or yarn/pnpm) installed on your machine.
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/hanvithSai/kubemind-ai.git
+   cd kubemind-ai
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
+
+## 📂 Project Structure
+
+```text
+kubemind-ai/
+├── app/
+│   ├── assistant/     # NLP Copilot interface
+│   ├── forecasting/   # Predictive analytics dashboard
+│   ├── graph/         # Interactive topology visualizer
+│   ├── insights/      # AI-driven actionable insights
+│   ├── timeline/      # Incident and deployment timeline
+│   └── globals.css    # Global styles & Tailwind config
+├── components/
+│   ├── graph/         # Custom nodes & animated edges for topology
+│   ├── demo-controller.tsx # State controller for mock demonstrations
+│   ├── live-logs.tsx  # Streaming log viewer component
+│   ├── sidebar.tsx    # Main application navigation
+│   └── telemetry-provider.tsx # Context for telemetry data
+├── lib/
+│   ├── store.ts       # Zustand state management
+│   ├── utils.ts       # Shared utility functions (clsx, tailwind-merge)
+│   └── mock-data.ts   # Synthetic data for prototype demonstration
+└── public/            # Static assets
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🤝 Contributing
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+We welcome contributions! Please follow the standard fork-and-pull request workflow.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## Learn More
+## 📄 License
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the MIT License.
