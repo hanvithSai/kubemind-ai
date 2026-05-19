@@ -57,7 +57,7 @@ export default function Dashboard() {
   if (!mounted) return <div className="h-full w-full flex items-center justify-center text-slate-500">Initializing Core Intelligence...</div>;
 
   return (
-    <div className="space-y-6 max-w-7xl mx-auto">
+    <div data-tour="command-center" className="space-y-6 max-w-7xl mx-auto">
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold text-slate-100 tracking-tight">Global Command Center</h1>

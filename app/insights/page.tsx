@@ -89,7 +89,7 @@ export default function InsightsPage() {
   const riskLevel = impactedNodes.some(n => n.status === 'critical') ? 'CRITICAL' : impactedNodes.length > 0 ? 'HIGH' : 'NOMINAL';
 
   return (
-    <div className="max-w-6xl mx-auto h-full flex flex-col">
+    <div data-tour="insights" className="max-w-6xl mx-auto h-full flex flex-col">
       <div className="flex items-center justify-between mb-8 border-b border-slate-800 pb-4">
         <div>
           <h1 className="text-2xl font-bold text-slate-100 tracking-tight">AI Correlation Engine</h1>

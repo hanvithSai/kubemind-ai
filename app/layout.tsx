@@ -4,6 +4,8 @@ import "./globals.css";
 import { Sidebar } from "@/components/sidebar";
 import { DemoController } from "@/components/demo-controller";
 import { TelemetryProvider } from "@/components/telemetry-provider";
+import { WalkthroughEngine } from "@/components/presentation/walkthrough-engine";
+import { PresentationController } from "@/components/presentation-controller";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,6 +31,8 @@ export default function RootLayout({
             </div>
           </main>
           <DemoController />
+          <PresentationController />
+          <WalkthroughEngine />
         </TelemetryProvider>
       </body>
     </html>

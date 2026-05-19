@@ -2,11 +2,12 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { LayoutDashboard, Network, Clock, Cpu, LineChart, MessageSquare, TerminalSquare } from 'lucide-react';
+import { LayoutDashboard, Network, Clock, Cpu, LineChart, MessageSquare, TerminalSquare, Globe } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useStore } from '@/lib/store';
 
 const navItems = [
+  { name: 'Mission Overview', href: '/overview', icon: Globe },
   { name: 'Command Center', href: '/', icon: LayoutDashboard },
   { name: 'Dependency Graph', href: '/graph', icon: Network },
   { name: 'Incident Timeline', href: '/timeline', icon: Clock },

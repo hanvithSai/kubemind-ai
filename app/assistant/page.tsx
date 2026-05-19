@@ -88,7 +88,7 @@ export default function AssistantPage() {
   if (!mounted) return <div className="h-full w-full flex items-center justify-center text-slate-500">Initializing NLP Copilot...</div>;
 
   return (
-    <div className="max-w-4xl mx-auto h-[calc(100vh-8rem)] flex flex-col">
+    <div data-tour="nlp-assistant" className="max-w-4xl mx-auto h-[calc(100vh-8rem)] flex flex-col">
       <div className="mb-6 flex items-center justify-between border-b border-slate-800 pb-4">
         <div>
           <h1 className="text-2xl font-bold text-slate-100 tracking-tight">NLP Operations Assistant</h1>

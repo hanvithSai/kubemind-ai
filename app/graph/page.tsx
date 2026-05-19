@@ -58,7 +58,7 @@ export default function DependencyGraph() {
   }, [storeEdges]);
 
   return (
-    <div className="h-full w-full flex flex-col">
+    <div data-tour="dependency-graph" className="h-full w-full flex flex-col">
       <div className="mb-6">
         <h1 className="text-2xl font-bold text-slate-100 tracking-tight">Live Dependency Intelligence Graph</h1>
         <p className="text-sm text-slate-400 mt-1">Real-time architecture topology and traffic flow</p>

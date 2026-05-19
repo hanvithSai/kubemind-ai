@@ -57,7 +57,7 @@ export default function ForecastingPage() {
   if (!mounted) return <div className="h-full w-full flex items-center justify-center text-slate-500">Initializing Forecasting Engine...</div>;
 
   return (
-    <div className="h-full flex flex-col max-w-6xl mx-auto">
+    <div data-tour="forecasting" className="h-full flex flex-col max-w-6xl mx-auto">
       <div className="mb-8 border-b border-slate-800 pb-4">
         <h1 className="text-2xl font-bold text-slate-100 tracking-tight">Predictive Forecasting</h1>
         <p className="text-sm text-slate-400 mt-1">AI-driven capacity planning and resource exhaustion modeling</p>
