@@ -26,6 +26,17 @@ export function WalkthroughEngine() {
       return;
     }
 
+    // Scroll target into view on step load
+    const scrollTarget = () => {
+      const el = document.querySelector(step.targetSelector!);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    };
+    
+    // Slight timeout to ensure route navigation and rendering is complete
+    const scrollTimer = setTimeout(scrollTarget, 100);
+
     const updateRect = () => {
       const el = document.querySelector(step.targetSelector!);
       if (el) {
@@ -43,6 +54,7 @@ export function WalkthroughEngine() {
     const interval = setInterval(updateRect, 100);
 
     return () => {
+      clearTimeout(scrollTimer);
       clearTimeout(timer);
       clearInterval(interval);
       window.removeEventListener('resize', updateRect);

@@ -3,26 +3,63 @@ import { WalkthroughStep } from './presentation-store';
 export const globalPresentationSteps: WalkthroughStep[] = [
   {
     id: 'intro',
-    title: 'Welcome to KubeMind AI',
+    title: 'KubeMind AI Mission',
     description: 'Autonomous Infrastructure Intelligence for Kubernetes Edge Environments.',
-    insight: 'This guided tour will showcase how our platform correlates telemetry and predicts failures before they happen.',
+    insight: 'Transitioning observability from reactive metrics to topology-aware system reasoning.',
     route: '/overview',
+    targetSelector: '[data-tour="overview-hero"]',
     position: 'center'
   },
   {
-    id: 'overview-hero',
-    title: 'Mission Overview',
-    description: 'Moving beyond reactive monitoring to predictive operational intelligence.',
-    insight: 'KubeMind provides real-time causality reasoning across distributed multi-cluster setups.',
-    targetSelector: '[data-tour="overview-hero"]',
+    id: 'overview-problem',
+    title: '1. Problem Understanding',
+    description: 'Distributed K3s/MicroK8s edge clusters face sudden resource starvation and cascading storage bottlenecks.',
+    insight: 'Legacy monitoring storms operators with alerts instead of tracing anomaly propagation paths.',
     route: '/overview',
-    position: 'bottom'
+    targetSelector: '[data-tour="overview-problem"]',
+    position: 'center'
+  },
+  {
+    id: 'overview-solution',
+    title: '2. Proposed Solution',
+    description: 'A topological observability layer combining React Flow graphs, ARIMA forecasting, and an autonomous RCA logic mesh.',
+    insight: 'Integrates Next.js 16, Zustand state streaming, and natural language operations.',
+    route: '/overview',
+    targetSelector: '[data-tour="overview-solution"]',
+    position: 'center'
+  },
+  {
+    id: 'overview-risks',
+    title: '3. Risk Analysis & Mitigation',
+    description: 'Addresses resource scarcity, temporary offline states, and anomaly false-positives at the edge.',
+    insight: 'Utilizes local event buffering, lightweight state queries, and weighted correlation heuristics.',
+    route: '/overview',
+    targetSelector: '[data-tour="overview-risks"]',
+    position: 'center'
+  },
+  {
+    id: 'overview-roadmap',
+    title: '4. Implementation Roadmap',
+    description: 'Execution timeline spanning from scaffolding, topology integration, AI engine scripting, and production hardening.',
+    insight: 'Ensures a solid, iterative engineering flow from concept to physical verification.',
+    route: '/overview',
+    targetSelector: '[data-tour="overview-roadmap"]',
+    position: 'center'
+  },
+  {
+    id: 'overview-outcome',
+    title: '5. Expected Outcome (Round 2)',
+    description: 'Showcasing real cluster integration, closed-loop mitigation scripts, and a localized Vector DB search assistant.',
+    insight: 'Validates automated recovery times in less than 45 seconds under synthetic stress tests.',
+    route: '/overview',
+    targetSelector: '[data-tour="overview-outcome"]',
+    position: 'center'
   },
   {
     id: 'command-center',
     title: 'Global Command Center',
-    description: 'Real-time telemetry ingestion and infrastructure saturation monitoring.',
-    insight: 'Millions of metrics are correlated per second to identify anomalies across nodes and namespaces.',
+    description: 'Real-time telemetry ingestion and edge cluster health monitoring.',
+    insight: 'Correlates log rates, log anomalies, and core node metrics in a unified control window.',
     route: '/',
     targetSelector: '[data-tour="command-center"]',
     position: 'center'
@@ -30,17 +67,17 @@ export const globalPresentationSteps: WalkthroughStep[] = [
   {
     id: 'dependency-graph',
     title: 'Dependency Intelligence',
-    description: 'Live service topology mapping and blast radius analysis.',
-    insight: 'AI automatically maps how latency propagation cascades through microservices.',
+    description: 'Live topological mesh showing real-time traffic flow and alert propagation.',
+    insight: 'Visualizes cascading failures as they travel across pod boundaries.',
     route: '/graph',
     targetSelector: '[data-tour="dependency-graph"]',
     position: 'center'
   },
   {
     id: 'ai-insights',
-    title: 'Insight Engine',
-    description: 'Autonomous root cause reasoning and remediation intelligence.',
-    insight: 'The AI correlates seemingly unrelated metrics to find the true causal chain of any degradation.',
+    title: 'Autonomous RCA Engine',
+    description: 'Maps anomalies to a structured, multi-step causality timeline.',
+    insight: 'Calculates the overall blast radius and outputs remediation steps with high confidence scores.',
     route: '/insights',
     targetSelector: '[data-tour="insights"]',
     position: 'center'
@@ -48,48 +85,23 @@ export const globalPresentationSteps: WalkthroughStep[] = [
   {
     id: 'forecasting',
     title: 'Predictive Forecasting',
-    description: 'Identify future degradation windows before they impact end-users.',
-    insight: 'Using historical operational data to predict memory exhaustion and PVC contention.',
+    description: 'Predicts memory saturation and PVC capacity limit windows 60 minutes out.',
+    insight: 'Allows proactive scaling or draining before a cluster degradation impacts nodes.',
     route: '/forecasting',
     targetSelector: '[data-tour="forecasting"]',
     position: 'center'
   },
   {
     id: 'nlp-assistant',
-    title: 'NLP Operations',
-    description: 'Query your infrastructure using natural language.',
-    insight: 'Instantly retrieve historical incident intelligence without touching a query language.',
+    title: 'NLP Operations Assistant',
+    description: 'Interact with KubeMind AI using natural language queries.',
+    insight: 'Queries past incidents, current pod states, and mitigation logs without SQL/PromQL overhead.',
     route: '/assistant',
     targetSelector: '[data-tour="nlp-assistant"]',
     position: 'center'
   }
 ];
 
-// Page-specific walkthrough steps can also be defined here if needed.
 export const getStepsForRoute = (route: string): WalkthroughStep[] => {
-  switch (route) {
-    case '/':
-      return [
-        {
-          id: 'dash-main',
-          title: 'Command Center',
-          description: 'High-level operational health of your edge clusters.',
-          insight: 'Real-time saturation and utilization telemetry.',
-          position: 'center'
-        }
-      ];
-    case '/graph':
-      return [
-        {
-          id: 'graph-main',
-          title: 'Topology Reasoning',
-          description: 'Visualize workload dependencies and traffic intensity.',
-          insight: 'Dynamically updates as services scale or degrade.',
-          position: 'center'
-        }
-      ];
-    // ... add more if needed
-    default:
-      return [];
-  }
+  return globalPresentationSteps.filter(step => step.route === route);
 };
